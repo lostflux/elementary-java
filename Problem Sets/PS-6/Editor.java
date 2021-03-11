@@ -1,8 +1,8 @@
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-import java.util.TreeMap;
+//import java.util.TreeMap;
 
 import javax.swing.*;
 

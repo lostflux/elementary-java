@@ -57,7 +57,7 @@ public class SketchServer {
 	/**
 	 * Removes the communicator from the list of current communicators
 	 */
-	public void removeCommunicator(SketchServerCommunicator comm) {
+	public synchronized void removeCommunicator(SketchServerCommunicator comm) {
 		comms.remove(comm);
 	}
 

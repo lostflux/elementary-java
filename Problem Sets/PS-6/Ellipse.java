@@ -41,7 +41,6 @@ public class Ellipse implements Shape {
 		this.y2 = Math.max(y1, y2);		
 	}
 
-	@Override
 	public boolean contains(int x, int y) {
 		double a = (x2-x1)/2.0, b = (y2-y1)/2.0;
 		double dx = x - (x1 + a); // horizontal distance from center
@@ -51,29 +50,24 @@ public class Ellipse implements Shape {
 		return Math.pow(dx / a, 2) + Math.pow(dy / b, 2) <= 1;
 	}
 
-	@Override
 	public void moveBy(int dx, int dy) {
 		x1 += dx; y1 += dy;
 		x2 += dx; y2 += dy;
 	}
 
-	@Override
 	public Color getColor() {
 		return color;
 	}
 
-	@Override
 	public void setColor(Color color) {
 		this.color = color;		
 	}
-	
-	@Override
+
 	public void draw(Graphics g) {
 		g.setColor(color);
 		g.fillOval(x1, y1, x2-x1, y2-y1);
 	}
 
-	@Override
 	public String toString() {
 		return "ellipse "+x1+" "+y1+" "+x2+" "+y2+" "+color.getRGB();
 	}

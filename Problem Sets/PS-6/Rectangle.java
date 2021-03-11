@@ -30,7 +30,6 @@ public class Rectangle implements Shape {
 		this.color = Color.BLACK; // Default Color = BLACK
 	}
 
-	@Override
 	public void moveBy(int dx, int dy) {
 		x1 += dx;
 		y1 += dy;
@@ -38,12 +37,10 @@ public class Rectangle implements Shape {
 		y2 += dy;
 	}
 
-	@Override
 	public Color getColor() {
 		return color;
 	}
 
-	@Override
 	public void setColor(Color color) {
 		this.color = color;
 	}
@@ -51,8 +48,7 @@ public class Rectangle implements Shape {
 	public void setColor(int rgb) {
 		color = new Color(rgb);
 	}
-		
-	@Override
+
 	public boolean contains(int x, int y) {
 		boolean x_check, y_check;
 		// Check if x is in range
@@ -73,7 +69,6 @@ public class Rectangle implements Shape {
 		return x_check && y_check;
 	}
 
-	@Override
 	public void draw(Graphics g) {
 		// Draw rectangle of this color
 		g.setColor(color);

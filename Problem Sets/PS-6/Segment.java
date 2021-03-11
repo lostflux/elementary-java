@@ -44,24 +44,20 @@ public class Segment implements Shape {
 	public void setEnd(int x2, int y2) {
 		this.x2 = x2; this.y2 = y2;
 	}
-	
-	@Override
+
 	public void moveBy(int dx, int dy) {
 		x1 += dx; y1 += dy;
 		x2 += dx; y2 += dy;
 	}
 
-	@Override
 	public Color getColor() {
 		return color;
 	}
 
-	@Override
 	public void setColor(Color color) {
 		this.color = color;		
 	}
-	
-	@Override
+
 	public boolean contains(int x, int y) {
 		return pointToSegmentDistance(x, y, x1, y1, x2, y2) <= 3;
 	}
@@ -88,14 +84,12 @@ public class Segment implements Shape {
 	public static double dist2(double x1, double y1, double x2, double y2) {
 		return (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
 	}
-	
-	@Override
+
 	public void draw(Graphics g) {
 		g.setColor(color);
 		g.drawLine(x1, y1, x2, y2);
 	}
 
-	@Override
 	public String toString() {
 		return "segment "+x1+" "+y1+" "+x2+" "+y2+" "+color.getRGB();
 	}
