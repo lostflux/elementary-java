@@ -1,0 +1,21 @@
+Add to BinaryTree.java a method:
+
+public BinaryTree copyToDepth(int d)
+
+This produces a "shallow" copy of a tree, down to the given depth. By "shallow", I mean that the tree structure is copied, but the same data elements are used (not copies of them). By "down to the given depth", I mean that nodes deeper than the value are chopped out. For depth 0, only the node itself is kept; its children are null. For depth 1, the children are kept but their children are null.
+
+------------------------------------------------------------------------ 
+sample solution:
+
+	public BinaryTree<E> copyToDepth(int d) {
+		if (d == 0) return new BinaryTree<E>(data);
+		BinaryTree<E> l = null;
+		if (hasLeft()) l = left.copyToDepth(d-1);
+		BinaryTree<E> r = null;
+		if (hasRight()) r = right.copyToDepth(d-1);
+		return new BinaryTree<E>(data, l, r);
+	}
+
+------------------------------------------------------------------------
+
+This is of course missing the use of a helper function, which they'll need for PS-2. So you might go over the fringe example one more time (I'm doing it in class) if anybody wants.

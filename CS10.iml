@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="" />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/LX" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/extension" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA0" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recitations/R1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS-1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recitations/R2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS1 XC" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L7" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L8" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L9" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exams/Exam 1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS-2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recitations/R4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L11" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS-3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L12" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L13" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L14" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L15" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L16" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA7" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS-4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exams/Exam 2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS-5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short Assignments/SA8" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem Sets/PS-6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recitations/R9" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L18" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L20" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L21" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L22" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lectures/L23" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Lectures/LX" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
