@@ -19,8 +19,8 @@ public class AdjacencyMapGraph<V,E> implements Graph<V,E> {
 	 * Default constructor, creating an empty graph 
 	 */
 	public AdjacencyMapGraph() {
-		in = new HashMap<V, Map<V, E>>();
-		out = new HashMap<V, Map<V, E>>();
+		in = new HashMap<>();
+		out = new HashMap<>();
 	}
 
 	public int numVertices() {
@@ -43,7 +43,7 @@ public class AdjacencyMapGraph<V,E> implements Graph<V,E> {
 	}
 
 	public boolean hasVertex(V v) {
-		return out.keySet().contains(v);
+		return out.containsKey(v);
 	}
 
 	public int outDegree(V v) {
@@ -72,9 +72,9 @@ public class AdjacencyMapGraph<V,E> implements Graph<V,E> {
 	}
 
 	public void insertVertex(V v) {
-		if (!out.keySet().contains(v)) {
-			out.put(v, new HashMap<V, E>());		// edges from v
-			in.put(v, new HashMap<V, E>());		// edges to v
+		if (!out.containsKey(v)) {
+			out.put(v, new HashMap<>());		// edges from v
+			in.put(v, new HashMap<>());			// edges to v
 		}
 	}
 
@@ -90,7 +90,7 @@ public class AdjacencyMapGraph<V,E> implements Graph<V,E> {
 	}
 
 	public void removeVertex(V v) {
-		if (!out.keySet().contains(v)) return;
+		if (!out.containsKey(v)) return;
 		// remove v from all adjacency lists for other vertices
 		for (V u : inNeighbors(v)) { // u has an edge to v
 			out.get(u).remove(v);

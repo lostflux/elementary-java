@@ -99,7 +99,7 @@ public class EditorOne extends JFrame {
 	private JComponent setupGUI() {
 		// Select type of shape
 		String[] shapes = {"ellipse"};
-		JComboBox<String> shapeB = new JComboBox<String>(shapes);
+		JComboBox<String> shapeB = new JComboBox<>(shapes);
 		shapeB.addActionListener(e -> shapeType = (String)((JComboBox<String>)e.getSource()).getSelectedItem());
 
 		// Select drawing/recoloring color
@@ -174,9 +174,11 @@ public class EditorOne extends JFrame {
 			}
 			case RECOLOR -> {
 				// In recoloring mode, change the shape's color if clicked in it
-				Random random = new Random(255);
+				Random random = new Random();
 
-				Color color = new Color(random.nextInt(), random.nextInt(), random.nextInt());
+				//NB: I also noticed I was trying to generate new colors with nextInt(),
+				// instead of floats between 0.0 and 1.0
+				this.color = new Color(random.nextFloat(), random.nextFloat(), random.nextFloat());
 				shape.setColor(color);
 
 			}
@@ -235,7 +237,7 @@ public class EditorOne extends JFrame {
 			moveFrom = null;
 		}
 		// Be sure to refresh the canvas (repaint) if the appearance has changed
-		repaint();
+//		repaint();
 	}
 
 	/**
@@ -248,10 +250,6 @@ public class EditorOne extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				new EditorOne();
-			}
-		});	
+		SwingUtilities.invokeLater(EditorOne::new);
 	}
 }
