@@ -174,9 +174,9 @@ public class EditorOne extends JFrame {
 			}
 			case RECOLOR -> {
 				// In recoloring mode, change the shape's color if clicked in it
-				Random random = new Random(255);
+				Random random = new Random();
 
-				Color color = new Color(random.nextInt(), random.nextInt(), random.nextInt());
+				Color color = new Color(random.nextFloat(), random.nextFloat(), random.nextFloat());
 				shape.setColor(color);
 
 			}

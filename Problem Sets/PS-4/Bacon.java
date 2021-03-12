@@ -592,8 +592,8 @@ public class Bacon {
 
 
     public static void main(String[] args) throws IOException {
-        String mode = "test";       // To use test data
-//        String mode = "play";       // To use actual data
+//        String mode = "test";       // To use test data
+        String mode = "play";       // To use actual data
         new Bacon(mode);
     }
 }
