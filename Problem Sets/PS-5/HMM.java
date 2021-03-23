@@ -4,11 +4,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * This class creates a Hidden Markov Model (HMM) over select data (sentences and tags)
+ * And extrapolates to tagging unseen sentences.
+ * @structure   : HMM() -> constructor
+ *              : viterbi() -> viterbi algorithm for tagging a sentence
+ *              : loadData() -> loads training data from a text file
+ *              : train() -> trains a HMM on specified data
+ *              : testConsole() -> test tags user input sentences in console
+ *              : testFile() -> tags words in a given file and compares results to
+ *                  a separate file of pre-computed tags, listing how many tags are correct
+ *                  and how many tags are wrong.
+ */
 public class HMM {
     public static boolean debug = false;                    // debugging flag. Enable to print steps to console
     public static final double unseenPenalty = -100;        // Penalty for when a word is missing in a given tag state
-    HashMap<String, HashMap<String, Double>> states;        // map of all states to their map of words and their probabilities
-    HashMap<String, HashMap<String, Double>> transitions;   // map of all states to their map of transitions and probabilities
+    Map<String, Map<String, Double>> states;        // map of all states to their map of words and their probabilities
+    Map<String, Map<String, Double>> transitions;   // map of all states to their map of transitions and probabilities
 
     /**
      * Default Constructor
@@ -90,7 +102,7 @@ public class HMM {
                 if (debug) System.out.println("currState: " + currState);
 
                 // Get map of transitions from the current state to another state
-                HashMap<String, Double> currTransitions = transitions.getOrDefault(currState, new HashMap<>());
+                Map<String, Double> currTransitions = transitions.getOrDefault(currState, new HashMap<>());
                 if (debug) System.out.println(i + " " + currState + " transitions: " + currTransitions);
 
                 // For each possible next state in the map of transitions,
@@ -139,8 +151,9 @@ public class HMM {
                     }
                     if (debug) System.out.println("backTrace: " + backTrace);
 
-                }
-            }
+                }// end of loop over current transitions
+            }// end of loop over current states
+
             // Finally, swap  current states, current scores with next states, next scores
             // so that next iteration of i takes a step forward in Graph
             currStates = nextStates;
@@ -165,7 +178,7 @@ public class HMM {
 
     /**
      * Method to load HMM from file.
-     * Credit: modified from incomplete wrapper code by Prof. Chris Bailey-Kellogg
+     * Credit: modified from incomplete code by Prof. Chris Bailey-Kellogg
      * @author Chris Bailey-Kellogg
      * @author Amittai Siavava
      * @param filename Name of file to find HMM from
@@ -177,8 +190,8 @@ public class HMM {
         String line;
         boolean gettingObservations = true;
         // Initialize HashMaps
-        HashMap<String, HashMap<String, Double>> states = new HashMap<>();
-        HashMap<String, HashMap<String, Double>> transitions = new HashMap<>();
+        Map<String, Map<String, Double>> states = new HashMap<>();
+        Map<String, Map<String, Double>> transitions = new HashMap<>();
         while ((line = in.readLine()) != null) {
             if (debug) System.out.println(line);
             if (line.equals("Observations")) gettingObservations = true;
@@ -192,14 +205,14 @@ public class HMM {
                     if (gettingObservations) {
                         String word = parts[i];
                         if (debug) System.out.println("observation "+state+" "+word+" "+score);
-                        HashMap<String, Double> temp = states.getOrDefault(state, new HashMap<>());
+                        Map<String, Double> temp = states.getOrDefault(state, new HashMap<>());
                         temp.put(word, score);
                         states.put(state, temp);
                     }
                     else {
                         String next = parts[i];
                         if (debug) System.out.println("transition "+state+" "+next+" "+score);
-                        HashMap<String, Double> temp = transitions.getOrDefault(state, new HashMap<>());
+                        Map<String, Double> temp = transitions.getOrDefault(state, new HashMap<>());
                         temp.put(state+" -> "+next, score);
                         transitions.put(state, temp);
                     }
@@ -215,8 +228,8 @@ public class HMM {
     private void train (String textSourceFile, String tagsSourceFile) throws IOException {
         BufferedReader textStream;      // Declare stream of text (sentences)
         BufferedReader tagsStream;      // Declare stream of tags (corresponding to a sentence)
-        HashMap<String, HashMap<String, Double>> states = new HashMap<>();      // Initialize map of states
-        HashMap<String, HashMap<String, Double>> transitions = new HashMap<>(); // Initialize map of transitions
+        Map<String, Map<String, Double>> states = new HashMap<>();      // Initialize map of states
+        Map<String, Map<String, Double>> transitions = new HashMap<>(); // Initialize map of transitions
 
         // Try to initialize textStream. IF file not found, print error, exit
         try {
@@ -269,7 +282,7 @@ public class HMM {
             String transition = firstTag + " -> " + secondTag;  // Transition
 
             // Get map of transitions for "#" tag
-            HashMap<String, Double> firstTransitions = transitions.getOrDefault(firstTag, new HashMap<>());
+            Map<String, Double> firstTransitions = transitions.getOrDefault(firstTag, new HashMap<>());
 
             // Add or increment count of transitions from "#" to first element in current sentence
             firstTransitions.put(transition, firstTransitions.getOrDefault(transition, 0.0) + 1);
@@ -284,7 +297,7 @@ public class HMM {
                 String tag = tags[i];       // Get corresponding tag
 
                 // Get map of strings for current tag
-                HashMap<String, Double> currentState = states.getOrDefault(tag, new HashMap<>());
+                Map<String, Double> currentState = states.getOrDefault(tag, new HashMap<>());
                 // Increment (or add) count of current word
                 currentState.put(word, currentState.getOrDefault(word, 0.0) + 1);
 
@@ -298,7 +311,7 @@ public class HMM {
                 transition = previousTag + " -> " + tag;    // Generate label of transition
 
                 // Get map of transitions for previous tag
-                HashMap<String, Double> possibleTransitions = transitions.getOrDefault(previousTag, new HashMap<>());
+                Map<String, Double> possibleTransitions = transitions.getOrDefault(previousTag, new HashMap<>());
 
                 // Get (or generate) value for current transition and increment it
                 possibleTransitions.put(transition, possibleTransitions.getOrDefault(transition, 0.0) + 1);
@@ -316,15 +329,15 @@ public class HMM {
 
         // Calculate totals and logarithmic probabilities for words in each state
         for (String state : states.keySet()) {
-            HashMap<String, Double> words = states.get(state);
+            Map<String, Double> words = states.get(state);
             double total = 0;       // variable to count total word occurrences
 
-            // for each word, add it's occurrences to total
+            // for each word, add it's occurrences to total occurrences
             for (double value : words.values()) {
                 total += value;
             }
 
-            // for each word, compute the log of it's occurrence divided by total occurrences
+            // for each word, compute the log of quotient of its occurrence and total occurrences
             for (String word : words.keySet()) {
                 words.put(word, Math.log(words.get(word) / total));
             }
@@ -335,14 +348,14 @@ public class HMM {
 
         // Calculate totals and logarithmic probabilities for each transition
         for (String state : transitions.keySet()) {
-            HashMap<String, Double> stateTransitions = transitions.get(state);
+            Map<String, Double> stateTransitions = transitions.get(state);
             double total = 0;       // Initialize total count
             // For each transition, add it's count to total
             for (double value : stateTransitions.values()) {
                 total += value;
             }
 
-            // For each transition, find log of count divided by total count
+            // For each transition, find log of quotient of count and total count
             for (String transition : stateTransitions.keySet()) {
                 stateTransitions.put(transition, Math.log(stateTransitions.get(transition)/total));
             }
@@ -354,7 +367,7 @@ public class HMM {
 
         System.out.println("TRAINING DONE!!!");
         if (debug) {
-            for (String key: states.keySet()) {
+            for (String key : states.keySet()) {
                 System.out.println(key + ":      -->" + states.get(key) + "");
             }
             for (String key : transitions.keySet()) {
@@ -362,12 +375,14 @@ public class HMM {
             }
         }
 
-        // set states and transitions to this.states, this.transitions
-        // NB: I avoided modifying them directly because this.states and this.transitions
-        // might have been initialized to a different state (containing some values)
-        // if the HMM class is first initialized with some data then trained... which might lead to
-        // a slightly different data model --> and different results
-        // if we just check whether they have stuff and add stuff inside as opposed to overwriting them.
+        /*
+         * set states and transitions to this.states, this.transitions
+         * NB: I avoided modifying them directly because this.states and this.transitions
+         * might have been initialized to a different state (containing some values)
+         * if the HMM class is first initialized with some data then trained,
+         * and is being retrained... which might lead to
+         * a slightly different data model --> and different/possibly inaccurate results.
+         */
         this.states = states;
         this.transitions = transitions;
     }
@@ -480,8 +495,8 @@ public class HMM {
             }
             String textLine = text.readLine();
             String tagsLine = tags.readLine();
-            int correct = 0;
-            int total = 0;
+            int correct = 0;    // Correct tags
+            int total = 0;      // Total tags
             // Keep doing until end of file
             while (textLine != null && tagsLine != null) {
                 String[] tagsInLine = tagsLine.split(" ");
@@ -490,10 +505,13 @@ public class HMM {
                     System.err.println("Mismatch!! \n Text: " + textLine + "\n Tags: " + Arrays.toString(tagsInLine) +
                             "\n" + "Computed: " + Arrays.toString(computedTags));
                 }
+                // If in debug mode, print useful info to track running process
                 if (debug) {
                     System.out.println("Text: " + textLine + "\n Tags: " + Arrays.toString(tagsInLine) +
                             "\n" + "Computed: " + Arrays.toString(computedTags));
                 }
+                // Increment totals
+                // Check if each created tag is correct and increment correct tags
                 for (int i = 0; i < tagsInLine.length; i++) {
                     total += 1;
                     if (computedTags[i].equalsIgnoreCase(tagsInLine[i])) correct += 1;
@@ -518,6 +536,5 @@ public class HMM {
         else if (mode.equalsIgnoreCase("1")) {
             testFile();
         }
-
     }
 }
