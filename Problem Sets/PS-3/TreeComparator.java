@@ -3,22 +3,30 @@ import java.util.Comparator;
 /**
  * Class to compare frequency trees for the priority queue
  */
-public class TreeComparator implements Comparator<FreqTree<Character>> {
+public class TreeComparator<T> implements Comparator<T> {
 
     public TreeComparator() {
         super();
     }
 
     @Override
-    public int compare(FreqTree tree1, FreqTree tree2) {
+    public int compare(T tree1, T tree2) {
+
+        FreqTree<Character> t1;
+        FreqTree<Character> t2;
+        if (tree1 instanceof FreqTree && tree2 instanceof FreqTree) {
+            t1 = (FreqTree<Character>) tree1;
+            t2 = (FreqTree<Character>) tree2;
+        }
+        else {
+            return 0;
+        }
 
         // Get frequencies of both trees
-        int frequency1 = tree1.getFrequency();
-        int frequency2 = tree2.getFrequency();
+        int frequency1 = t1.getFrequency();
+        int frequency2 = t2.getFrequency();
 
         // if frequency1 >= frequency2 return 1  else return -1
-        if (frequency1 > frequency2) return 1;
-        else if (frequency1 == frequency2) return 0;
-        else return -1;
+        return Integer.compare(frequency1, frequency2);
     }
 }

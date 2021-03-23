@@ -1,3 +1,5 @@
+import net.datastructures.Tree;
+
 import java.io.*;
 import java.util.*;
 
@@ -44,8 +46,8 @@ public class Compressor {
         decompressedFileName = sourceFile.split("\\.")[0] + "_decompressed.txt";
     }
 
-    public FreqTree<Character> getFinalTree() throws IOException {
-        FreqTree<Character> finalTree = buildTree();
+    public Tree<Character> getFinalTree() throws IOException {
+        Tree<Character> finalTree = buildTree();
         if (finalTree == null) {
             System.err.println("Error building tree");
         }
@@ -75,7 +77,7 @@ public class Compressor {
      * @param frequencyTable HashMap containing characters and their frequencies in file
      * @return A list of frequency trees
      */
-    private List<FreqTree<Character>> createInitTrees(HashMap<Character, Integer> frequencyTable) throws IOException {
+    private List<Tree<Character>> createInitTrees(HashMap<Character, Integer> frequencyTable) throws IOException {
         // TODO: Error Handling
         //  If frequency table for current instance is empty, attempt rebuild
         while (frequencyTable.size() == 0) {
@@ -98,7 +100,7 @@ public class Compressor {
         // If frequency tree is validated successfully,
 
         // Create list instance to hold initial trees
-        List<FreqTree<Character>> initialTrees = new ArrayList<>();
+        List<Tree<Character>> initialTrees = new ArrayList<>();
 
         // For each character, create a frequency tree and put into list
         for (char key : frequencyTable.keySet()) {
@@ -109,23 +111,23 @@ public class Compressor {
     }
 
     /**
-     * Method to construct priority queue from all the sublists
+     * Method to construct priority queue from all the sub lists
      * @return PriorityQueue  containing characters sorted by increasing frequency
      * @throws IOException Error reading from or writing to file
      */
-    public PriorityQueue<FreqTree<Character>> buildPriorityQueue() throws IOException {
+    public PriorityQueue<Tree<Character>> buildPriorityQueue() throws IOException {
 
         // Build frequency table
         HashMap<Character, Integer> frequencyTable = logFrequencies();
 
         // Create initial trees
-        List<FreqTree<Character>> initialTrees = createInitTrees(frequencyTable);
+        List<Tree<Character>> initialTrees = createInitTrees(frequencyTable);
 
         // Instantiate TreeComparator class to be used in sorting the priority queue
-        TreeComparator comparator = new TreeComparator();
+        TreeComparator<Tree<Character>> comparator = new TreeComparator<>();
 
         // Instantiate the priority queue instance to be updated
-        PriorityQueue<FreqTree<Character>> priorityQueue = new PriorityQueue<>(comparator);
+        PriorityQueue<Tree<Character>> priorityQueue = new PriorityQueue<>(comparator);
 
         // Dump all initial trees into the priority queue
         priorityQueue.addAll(initialTrees);
@@ -138,24 +140,24 @@ public class Compressor {
      * @return single tree object
      * @throws IOException Error reading from or writing to file
      */
-    public FreqTree<Character> buildTree() throws IOException {
+    public Tree<Character> buildTree() throws IOException {
 
         // Construct the priority queue
-        PriorityQueue<FreqTree<Character>> priorityQueue = buildPriorityQueue();
+        PriorityQueue<Tree<Character>> priorityQueue = buildPriorityQueue();
 
         // While priority queue has more than one tree, get the two trees with least frequency
         // and chain them into one tree, then add the one tree back into priority queue
         while (priorityQueue.size() > 1) {
             // Get the two trees with lowest frequency
-            FreqTree<Character> T1 = priorityQueue.remove();
-            FreqTree<Character> T2 = priorityQueue.remove();
+            FreqTree<Character> T1 = (FreqTree<Character>) priorityQueue.remove();
+            FreqTree<Character> T2 = (FreqTree<Character>) priorityQueue.remove();
 
             // Get their respective frequencies
             int freq1 = T1.getFrequency();
             int freq2 = T2.getFrequency();
 
             // Build new tree with frequency as their sum frequencies and the two trees as children
-            FreqTree<Character> newTree = new FreqTree<>(freq1+freq2, T1, T2);
+            Tree<Character> newTree = new FreqTree<>(freq1+freq2, T1, T2);
 
             // Add new tree into Priority Queue
             priorityQueue.add(newTree);
@@ -186,7 +188,7 @@ public class Compressor {
      */
     private void buildDictionary() throws IOException {
 //        HashMap<Character, String> dictionary = new HashMap<>();
-        FreqTree<Character> finalTree = buildTree();
+        Tree<Character> finalTree = buildTree();
 
         dictionary = new HashMap<>();
 
@@ -215,20 +217,21 @@ public class Compressor {
      * @param tree current tree
      * @param path path leading to current tree
      */
-    private void addToDictionary(FreqTree<Character> tree, String path) {
+    private void addToDictionary(Tree<Character> tree, String path) {
+        FreqTree<Character> castTree = (FreqTree<Character>) tree;
         // If current tree node has data, save it and the path to the dictionary
         if (!tree.isEmpty()) {
-            dictionary.put(tree.getData(), path);
+            dictionary.put(castTree.getData(), path);
         }
 
         // if tree node has left child, recurse with the left child, updating the path accordingly
-        if (tree.hasLeft()) {
-            addToDictionary(tree.getLeft(), path+0);
+        if (castTree.hasLeft()) {
+            addToDictionary(castTree.getLeft(), path+0);
         }
 
         // if tree node has right child, recurse with the right child, updating the path accordingly
-        if (tree.hasRight()) {
-            addToDictionary(tree.getRight(), path+1);
+        if (castTree.hasRight()) {
+            addToDictionary(castTree.getRight(), path+1);
         }
     }
 
@@ -431,7 +434,7 @@ public class Compressor {
             // TODO: Ignore these, I had attempted EC stuff but didn't finish.
             //  the encoder works, but the decoder builds a faulty tree.
             case "encode" -> {
-                FreqTree<Character> finalTree = compressEngine.getFinalTree();
+                Tree<Character> finalTree = compressEngine.getFinalTree();
                 compressEngine.compress();
                 ArrayList<String> encoded = Encoder.encode(finalTree);
                 System.out.println(encoded.get(0));
@@ -440,12 +443,12 @@ public class Compressor {
             }
             case "decode" -> {
                 Compressor.engine(fileName, "encode");
-                FreqTree<Character> finalTree = compressEngine.getFinalTree();
+                Tree<Character> finalTree = compressEngine.getFinalTree();
                 ArrayList<String> encoded = Encoder.encode(finalTree);
                 String preordered = encoded.get(0);
 //                System.out.println("final" + preordered);
                 String inordered = encoded.get(1);
-                FreqTree<Character> decodedFinalTree = Encoder.decode(preordered, inordered);
+                Tree<Character> decodedFinalTree = Encoder.decode(preordered, inordered);
                 System.out.println(decodedFinalTree.equals(finalTree));
                 String finalPR = Encoder.encode(decodedFinalTree).get(0);
 

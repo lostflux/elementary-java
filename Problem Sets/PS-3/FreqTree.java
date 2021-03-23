@@ -1,11 +1,11 @@
 import net.datastructures.*;
 
-import java.util.Comparator;
 import java.util.Iterator;
 
 /**
  * Nested class for Tree
  * @param <E> Generic data type
+ * @author Amittai Siavava
  */
 public class FreqTree<E> implements Tree<E> {
 
@@ -159,12 +159,8 @@ public class FreqTree<E> implements Tree<E> {
     private String buildString(int level) {
         String name = " ";
         String basicHolder = "  ";
-        String currentHolder = "";
 
-        for (int i=0; i<= level; i++) {
-            currentHolder += basicHolder;
-        }
-        name = name + currentHolder + "Tree: " + this.data + " " + this.frequency;
+        name = name + basicHolder.repeat(Math.max(0, level + 1)) + "Tree: " + this.data + " " + this.frequency;
         int left = level + 1;
         int right = left;
         if (this.hasLeft()) name += "\n l" + level + this.left.buildString(left);
@@ -256,6 +252,6 @@ public class FreqTree<E> implements Tree<E> {
 
     @Override
     public boolean isRoot(Position<E> position) throws InvalidPositionException {
-        return false;
+        return !this.hasLeftParent() && !this.hasRightParent();
     }
 }

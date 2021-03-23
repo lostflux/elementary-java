@@ -2,6 +2,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+/**
+ *
+ * @param <T> Generic type of Array contents
+ */
 public class Array<T> implements List<T> {
     private T[] array;
     private static final int initCap = 10;
@@ -176,12 +180,24 @@ public class Array<T> implements List<T> {
 
     @Override
     public boolean addAll(int index, @NotNull Collection<? extends T> c) {
-        return false;
+        for (T item : c) {
+            add(item);
+        }
+        return true;
     }
 
     @Override
     public boolean removeAll(@NotNull Collection<?> c) {
-        return false;
+        try {
+            for (Object o : c) {
+                this.remove(o);
+            }
+            return true;
+        }
+        catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
     }
 
     @Override
@@ -191,31 +207,35 @@ public class Array<T> implements List<T> {
 
     @Override
     public void clear() {
-
+        try {
+            array = (T[]) new Object[initCap];
+        }
+        catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     @Override
     public T get(int index) {
-        return null;
-    }
-
-    public T get(T item) throws Exception {
-        for (T data : array) {
-            if (data.equals(item)) {
-                return data;
-            }
-        }
-        throw new Exception("Item Not Found!");
+        return array[index];
     }
 
     @Override
     public T set(int index, T element) {
-        return null;
+        if (size + 1 - index >= 0) {
+            System.arraycopy(array, index, array, index + 1, size + 1 - index);
+        }
+        T prev = array[index];
+        array[index] = element;
+        return prev;
     }
 
     @Override
     public void add(int index, T element) {
-
+        if (size + 1 - index >= 0) {
+            System.arraycopy(array, index, array, index + 1, size + 1 - index);
+        }
+        array[index] = element;
     }
 
     /**
@@ -236,19 +256,150 @@ public class Array<T> implements List<T> {
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int lastIndex = -1;
+        for (int i=0; i<size; i++) {
+            if (this.array[i].equals(o)) lastIndex = i;
+        }
+        return lastIndex;
     }
 
     @NotNull
     @Override
     public ListIterator<T> listIterator() {
-        return null;
+        return new ListIterator<>() {
+            int index = 0;
+            private boolean recentChange = false;
+            @Override
+            public boolean hasNext() {
+                return index < array.length;
+            }
+
+            @Override
+            public T next() {
+                recentChange = false;
+                return array[index++];
+            }
+
+            @Override
+            public boolean hasPrevious() {
+                return index > 0;
+            }
+
+            @Override
+            public T previous() {
+                recentChange = false;
+                return array[--index];
+            }
+
+            @Override
+            public int nextIndex() {
+                return index + 1;
+            }
+
+            @Override
+            public int previousIndex() {
+                return index - 1;
+            }
+
+            @Override
+            public void remove() throws UnsupportedOperationException {
+                if (!recentChange) {
+                    System.arraycopy(array, index+1, array, index, size - index);
+                    recentChange = true;
+                }
+                else {
+                    throw new UnsupportedOperationException();
+                }
+            }
+
+            @Override
+            public void set(T t) throws UnsupportedOperationException{
+                if (!recentChange) {
+                    array[index] = t;
+                    recentChange = true;
+                }
+                else {
+                    throw new UnsupportedOperationException();
+                }
+            }
+
+            @Override
+            public void add(T t) {
+                System.arraycopy(array, index, array, index+1, array.length - index);
+                array[index] = t;
+                index++;
+            }
+        };
     }
 
     @NotNull
     @Override
     public ListIterator<T> listIterator(int index) {
-        return null;
+        return new ListIterator<>() {
+            int startIndex = index;
+            int currentIndex = index;
+            private boolean recentChange = false;
+            @Override
+            public boolean hasNext() {
+                return currentIndex < array.length;
+            }
+
+            @Override
+            public T next() {
+                recentChange = false;
+                return array[currentIndex++];
+            }
+
+            @Override
+            public boolean hasPrevious() {
+                return currentIndex > startIndex;
+            }
+
+            @Override
+            public T previous() {
+                recentChange = false;
+                return array[--currentIndex];
+            }
+
+            @Override
+            public int nextIndex() {
+                return currentIndex + 1;
+            }
+
+            @Override
+            public int previousIndex() {
+                return currentIndex - 1;
+            }
+
+            @Override
+            public void remove() throws UnsupportedOperationException {
+                if (!recentChange) {
+                    System.arraycopy(array, currentIndex +1, array, currentIndex, size - currentIndex);
+                    recentChange = true;
+                }
+                else {
+                    throw new UnsupportedOperationException();
+                }
+            }
+
+            @Override
+            public void set(T t) throws UnsupportedOperationException{
+                if (!recentChange) {
+                    array[currentIndex] = t;
+                    recentChange = true;
+                }
+                else {
+                    throw new UnsupportedOperationException();
+                }
+            }
+
+            @Override
+            public void add(T t) {
+                System.arraycopy(array, currentIndex, array, currentIndex+1, array.length - currentIndex);
+                array[currentIndex] = t;
+                currentIndex++;
+            }
+        };
     }
 
     @NotNull

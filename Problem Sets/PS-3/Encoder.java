@@ -1,3 +1,5 @@
+import net.datastructures.Tree;
+
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +10,7 @@ public class Encoder {
     public Encoder() {
 
     }
-    public ArrayList<String> encodeTree(FreqTree<Character> finalTree) {
+    public ArrayList<String> encodeTree(Tree<Character> finalTree) {
         String preorder = "";
         String inorder = "";
         preorder += precodeTree(finalTree);
@@ -21,49 +23,60 @@ public class Encoder {
         return encoded;
     }
 
-    public String precodeTree(FreqTree<Character> tree) {
+    public String precodeTree(Tree<Character> tree) {
+        FreqTree<Character> castTree;
+        if (tree instanceof FreqTree) {
+            castTree = (FreqTree<Character>) tree;
+        }
+        else return null;
         String name;
         String preorder = "";
-        if (tree.hasData()) {
-            name = String.valueOf(tree.getData());
+        if (castTree.hasData()) {
+            name = String.valueOf(castTree.getData());
         }
         else {
-            name = tree.getFrequency() + "F";
+            name = castTree.getFrequency() + "F";
         }
         preorder += name + "///";
 
-        if (tree.hasLeft()) {
-            preorder += precodeTree(tree.getLeft());
+        if (castTree.hasLeft()) {
+            preorder += precodeTree(castTree.getLeft());
         }
-        if (tree.hasRight()) {
-            preorder += precodeTree(tree.getRight());
+        if (castTree.hasRight()) {
+            preorder += precodeTree(castTree.getRight());
         }
         return preorder;
     }
-    public String incodeTree(FreqTree<Character> tree) {
+    public String incodeTree(Tree<Character> tree) {
+        FreqTree<Character> castTree;
+        if (tree instanceof FreqTree) {
+            castTree = (FreqTree<Character>) tree;
+        }
+        else return null;
+
         String name;
         String inorder = "";
 
-        if (tree.hasData()) {
-            name = String.valueOf(tree.getData());
+        if (castTree.hasData()) {
+            name = String.valueOf(castTree.getData());
         }
         else {
-            name = tree.getFrequency() + "F";
+            name = castTree.getFrequency() + "F";
         }
-        if (tree.hasLeft()) {
-            inorder += incodeTree(tree.getLeft());
+        if (castTree.hasLeft()) {
+            inorder += incodeTree(castTree.getLeft());
         }
 
         inorder = inorder + "///" + name;
 
-        if (tree.hasRight()) {
-            inorder += incodeTree(tree.getRight());
+        if (castTree.hasRight()) {
+            inorder += incodeTree(castTree.getRight());
         }
 
         return inorder;
     }
 
-    public FreqTree<Character> decodeTree(String preorder, String inorder) {
+    public Tree<Character> decodeTree(String preorder, String inorder) {
         String[] preordered = preorder.split("///");
         String[] inordered = inorder.split("///");
 
@@ -71,8 +84,7 @@ public class Encoder {
         int startRange = 0;
         int endRange  = preordered.length;
 
-        FreqTree<Character> constructedTree = addTree(preordered, inordered);
-        return constructedTree;
+        return addTree(preordered, inordered);
     }
 
     public FreqTree<Character> addTree(String[] preordered, String[] inordered) {
@@ -135,13 +147,13 @@ public class Encoder {
         return index;
     }
 
-    public static ArrayList<String> encode (FreqTree<Character> tree) {
+    public static ArrayList<String> encode (Tree<Character> tree) {
         Encoder en = new Encoder();
 
         return en.encodeTree(tree);
     }
 
-    public static FreqTree<Character> decode(String preordered, String inordered) {
+    public static Tree<Character> decode(String preordered, String inordered) {
         Encoder en = new Encoder();
         return en.decodeTree(preordered, inordered);
     }
