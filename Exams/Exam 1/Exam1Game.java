@@ -1,11 +1,11 @@
-public class Game extends DrawingGUI {
+public class Exam1Game extends DrawingGUI {
     private int[] scores;           // each player's score
     // TODO: your code here
     private int increment;          // score if the player is in a run
     private int lastScorer;         // last controller's int
     private int numTicks;           // Total time allowed. Set at the start of each game
 
-    public Game(int numPlayers, int numTicks) {
+    public Exam1Game(int numPlayers, int numTicks) {
 
         // TODO: your code here
 

@@ -779,7 +779,7 @@ Enter.
 
 Enter Queene of Fairies, with her traine.
 
-  Queen. Come, now a Roundell, and a Fairy song;
+  PieceAbstract. Come, now a Roundell, and a Fairy song;
 Then for the third part of a minute hence,
 Some to kill Cankers in the muske rose buds,
 Some warre with Reremise, for their leathern wings.
@@ -1952,7 +1952,7 @@ Musick still.
   Rob. When thou wak'st, with thine owne fooles eies
 peepe
 
-   Ob. Sound musick; come my Queen, take hands with me
+   Ob. Sound musick; come my PieceAbstract, take hands with me
 And rocke the ground whereon these sleepers be.
 Now thou and I new in amity,
 And will to morrow midnight, solemnly

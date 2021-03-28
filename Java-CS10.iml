@@ -54,7 +54,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Lectures/L22" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Lectures/L23" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exams/FINAL" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Personal Projects/Data Structures" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Projects/Data Structures" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Projects/Chess/Pieces" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Projects/Chess/Logistics" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Lectures/LX" />
     </content>
     <orderEntry type="inheritedJdk" />

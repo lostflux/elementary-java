@@ -23,7 +23,7 @@ A Captain.
 English Ambassadors.
 Ghost of Hamlet's Father.
 
-Gertrude, Queen of Denmark, and Mother of Hamlet.
+Gertrude, PieceAbstract of Denmark, and Mother of Hamlet.
 Ophelia, Daughter to Polonius.
 
 Lords, Ladies, Officers, Soldiers, Sailors, Messengers, and other
@@ -370,7 +370,7 @@ Where we shall find him most conveniently.
 
 Scene II. Elsinore. A room of state in the Castle.
 
-[Enter the King, Queen, Hamlet, Polonius, Laertes, Voltimand,
+[Enter the King, PieceAbstract, Hamlet, Polonius, Laertes, Voltimand,
 Cornelius, Lords, and Attendant.]
 
 King.
@@ -464,7 +464,7 @@ How is it that the clouds still hang on you?
 Ham.
 Not so, my lord; I am too much i' the sun.
 
-Queen.
+PieceAbstract.
 Good Hamlet, cast thy nighted colour off,
 And let thine eye look like a friend on Denmark.
 Do not for ever with thy vailed lids
@@ -475,7 +475,7 @@ Passing through nature to eternity.
 Ham.
 Ay, madam, it is common.
 
-Queen.
+PieceAbstract.
 If it be,
 Why seems it so particular with thee?
 
@@ -525,7 +525,7 @@ And we beseech you bend you to remain
 Here in the cheer and comfort of our eye,
 Our chiefest courtier, cousin, and our son.
 
-Queen.
+PieceAbstract.
 Let not thy mother lose her prayers, Hamlet:
 I pray thee stay with us; go not to Wittenberg.
 
@@ -1793,7 +1793,7 @@ So much as from occasion you may glean,
 Whether aught, to us unknown, afflicts him thus,
 That, open'd, lies within our remedy.
 
-Queen.
+PieceAbstract.
 Good gentlemen, he hath much talk'd of you,
 And sure I am two men there are not living
 To whom he more adheres. If it will please you
@@ -1818,7 +1818,7 @@ To be commanded.
 King.
 Thanks, Rosencrantz and gentle Guildenstern.
 
-Queen.
+PieceAbstract.
 Thanks, Guildenstern and gentle Rosencrantz:
 And I beseech you instantly to visit
 My too-much-changed son.--Go, some of you,
@@ -1828,7 +1828,7 @@ Guil.
 Heavens make our presence and our practices
 Pleasant and helpful to him!
 
-Queen.
+PieceAbstract.
 Ay, amen!
 
 [Exeunt Rosencrantz, Guildenstern, and some Attendants].
@@ -1866,7 +1866,7 @@ Thyself do grace to them, and bring them in.
 He tells me, my sweet queen, he hath found
 The head and source of all your son's distemper.
 
-Queen.
+PieceAbstract.
 I doubt it is no other but the main,--
 His father's death and our o'erhasty marriage.
 
@@ -1925,7 +1925,7 @@ Mad call I it; for to define true madness,
 What is't but to be nothing else but mad?
 But let that go.
 
-Queen.
+PieceAbstract.
 More matter, with less art.
 
 Pol.
@@ -1950,7 +1950,7 @@ phrase: but you shall hear. Thus:
 [Reads.]
 'In her excellent white bosom, these, &c.'
 
-Queen.
+PieceAbstract.
 Came this from Hamlet to her?
 
 Pol.
@@ -2006,7 +2006,7 @@ And all we wail for.
 King.
 Do you think 'tis this?
 
-Queen.
+PieceAbstract.
 It may be, very likely.
 
 Pol.
@@ -2031,7 +2031,7 @@ Pol.
 You know sometimes he walks for hours together
 Here in the lobby.
 
-Queen.
+PieceAbstract.
 So he does indeed.
 
 Pol.
@@ -2045,14 +2045,14 @@ But keep a farm and carters.
 King.
 We will try it.
 
-Queen.
+PieceAbstract.
 But look where sadly the poor wretch comes reading.
 
 Pol.
 Away, I do beseech you, both away
 I'll board him presently:--O, give me leave.
 
-[Exeunt King, Queen, and Attendants.]
+[Exeunt King, PieceAbstract, and Attendants.]
 
 [Enter Hamlet, reading.]
 
@@ -2738,7 +2738,7 @@ ACT III.
 
 Scene I. A room in the Castle.
 
-[Enter King, Queen, Polonius, Ophelia, Rosencrantz, and
+[Enter King, PieceAbstract, Polonius, Ophelia, Rosencrantz, and
 Guildenstern.]
 
 King.
@@ -2757,7 +2757,7 @@ But, with a crafty madness, keeps aloof
 When we would bring him on to some confession
 Of his true state.
 
-Queen.
+PieceAbstract.
 Did he receive you well?
 
 Ros.
@@ -2770,7 +2770,7 @@ Ros.
 Niggard of question; but, of our demands,
 Most free in his reply.
 
-Queen.
+PieceAbstract.
 Did you assay him
 To any pastime?
 
@@ -2810,7 +2810,7 @@ And gather by him, as he is behav'd,
 If't be the affliction of his love or no
 That thus he suffers for.
 
-Queen.
+PieceAbstract.
 I shall obey you:--
 And for your part, Ophelia, I do wish
 That your good beauties be the happy cause
@@ -2821,7 +2821,7 @@ To both your honours.
 Oph.
 Madam, I wish it may.
 
-[Exit Queen.]
+[Exit PieceAbstract.]
 
 Pol.
 Ophelia, walk you here.--Gracious, so please you,
@@ -3172,7 +3172,7 @@ Ham.
 They are coming to the play. I must be idle:
 Get you a place.
 
-[Danish march. A flourish. Enter King, Queen, Polonius, Ophelia,
+[Danish march. A flourish. Enter King, PieceAbstract, Polonius, Ophelia,
 Rosencrantz, Guildenstern, and others.]
 
 King.
@@ -3207,7 +3207,7 @@ the players ready?
 Ros.
 Ay, my lord; they stay upon your patience.
 
-Queen.
+PieceAbstract.
 Come hither, my dear Hamlet, sit by me.
 
 Ham.
@@ -3271,16 +3271,16 @@ epitaph is 'For, O, for, O, the hobby-horse is forgot!'
 
 [Trumpets sound. The dumb show enters.]
 
-[Enter a King and a Queen very lovingly; the Queen embracing
+[Enter a King and a PieceAbstract very lovingly; the PieceAbstract embracing
 him and he her. She kneels, and makes show of protestation
 unto him. He takes her up, and declines his head upon her
 neck: lays him down upon a bank of flowers: she, seeing
 him asleep, leaves him. Anon comes in a fellow, takes off his
 crown, kisses it, pours poison in the king's ears, and exit. The
-Queen returns, finds the King dead, and makes passionate action.
+PieceAbstract returns, finds the King dead, and makes passionate action.
 The Poisoner with some three or four Mutes, comes in again,
 seeming to lament with her. The dead body is carried away. The
-Poisoner wooes the Queen with gifts; she seems loth and unwilling
+Poisoner wooes the PieceAbstract with gifts; she seems loth and unwilling
 awhile, but in the end accepts his love.]
 
 [Exeunt.]
@@ -3324,7 +3324,7 @@ Oph.
 Ham.
 As woman's love.
 
-[Enter a King and a Queen.]
+[Enter a King and a PieceAbstract.]
 
 P. King.
 Full thirty times hath Phoebus' cart gone round
@@ -3334,7 +3334,7 @@ About the world have times twelve thirties been,
 Since love our hearts, and Hymen did our hands,
 Unite commutual in most sacred bands.
 
-P. Queen.
+P. PieceAbstract.
 So many journeys may the sun and moon
 Make us again count o'er ere love be done!
 But, woe is me, you are so sick of late,
@@ -3355,7 +3355,7 @@ And thou shalt live in this fair world behind,
 Honour'd, belov'd, and haply one as kind
 For husband shalt thou,--
 
-P. Queen.
+P. PieceAbstract.
 O, confound the rest!
 Such love must needs be treason in my breast:
 In second husband let me be accurst!
@@ -3364,7 +3364,7 @@ None wed the second but who kill'd the first.
 Ham.
 [Aside.] Wormwood, wormwood!
 
-P. Queen.
+P. PieceAbstract.
 The instances that second marriage move
 Are base respects of thrift, but none of love.
 A second time I kill my husband dead
@@ -3402,7 +3402,7 @@ Our thoughts are ours, their ends none of our own:
 So think thou wilt no second husband wed;
 But die thy thoughts when thy first lord is dead.
 
-P. Queen.
+P. PieceAbstract.
 Nor earth to me give food, nor heaven light!
 Sport and repose lock from me day and night!
 To desperation turn my trust and hope!
@@ -3421,7 +3421,7 @@ My spirits grow dull, and fain I would beguile
 The tedious day with sleep.
 [Sleeps.]
 
-P. Queen.
+P. PieceAbstract.
 Sleep rock thy brain,
 And never come mischance between us twain!
 
@@ -3430,7 +3430,7 @@ And never come mischance between us twain!
 Ham.
 Madam, how like you this play?
 
-Queen.
+PieceAbstract.
 The lady protests too much, methinks.
 
 Ham.
@@ -3500,7 +3500,7 @@ The King rises.
 Ham.
 What, frighted with false fire!
 
-Queen.
+PieceAbstract.
 How fares my lord?
 
 Pol.
@@ -3902,7 +3902,7 @@ Words without thoughts never to heaven go.
 
 Scene IV. Another room in the castle.
 
-[Enter Queen and Polonius.]
+[Enter PieceAbstract and Polonius.]
 
 Pol.
 He will come straight. Look you lay home to him:
@@ -3914,7 +3914,7 @@ Pray you, be round with him.
 Ham.
 [Within.] Mother, mother, mother!
 
-Queen.
+PieceAbstract.
 I'll warrant you:
 Fear me not:--withdraw; I hear him coming.
 
@@ -3925,33 +3925,33 @@ Fear me not:--withdraw; I hear him coming.
 Ham.
 Now, mother, what's the matter?
 
-Queen.
+PieceAbstract.
 Hamlet, thou hast thy father much offended.
 
 Ham.
 Mother, you have my father much offended.
 
-Queen.
+PieceAbstract.
 Come, come, you answer with an idle tongue.
 
 Ham.
 Go, go, you question with a wicked tongue.
 
-Queen.
+PieceAbstract.
 Why, how now, Hamlet!
 
 Ham.
 What's the matter now?
 
-Queen.
+PieceAbstract.
 Have you forgot me?
 
 Ham.
 No, by the rood, not so:
-You are the Queen, your husband's brother's wife,
+You are the PieceAbstract, your husband's brother's wife,
 And,--would it were not so!--you are my mother.
 
-Queen.
+PieceAbstract.
 Nay, then, I'll set those to you that can speak.
 
 Ham.
@@ -3959,7 +3959,7 @@ Come, come, and sit you down; you shall not budge;
 You go not till I set you up a glass
 Where you may see the inmost part of you.
 
-Queen.
+PieceAbstract.
 What wilt thou do? thou wilt not murder me?--
 Help, help, ho!
 
@@ -3977,7 +3977,7 @@ Pol.
 
 [Falls and dies.]
 
-Queen.
+PieceAbstract.
 O me, what hast thou done?
 
 Ham.
@@ -3985,14 +3985,14 @@ Nay, I know not: is it the king?
 
 [Draws forth Polonius.]
 
-Queen.
+PieceAbstract.
 O, what a rash and bloody deed is this!
 
 Ham.
 A bloody deed!--almost as bad, good mother,
 As kill a king and marry with his brother.
 
-Queen.
+PieceAbstract.
 As kill a king!
 
 Ham.
@@ -4007,7 +4007,7 @@ If it be made of penetrable stuff;
 If damned custom have not braz'd it so
 That it is proof and bulwark against sense.
 
-Queen.
+PieceAbstract.
 What have I done, that thou dar'st wag thy tongue
 In noise so rude against me?
 
@@ -4025,7 +4025,7 @@ Yea, this solidity and compound mass,
 With tristful visage, as against the doom,
 Is thought-sick at the act.
 
-Queen.
+PieceAbstract.
 Ah me, what act,
 That roars so loud, and thunders in the index?
 
@@ -4067,7 +4067,7 @@ When the compulsive ardour gives the charge,
 Since frost itself as actively doth burn,
 And reason panders will.
 
-Queen.
+PieceAbstract.
 O Hamlet, speak no more:
 Thou turn'st mine eyes into my very soul;
 And there I see such black and grained spots
@@ -4079,7 +4079,7 @@ In the rank sweat of an enseamed bed,
 Stew'd in corruption, honeying and making love
 Over the nasty sty,--
 
-Queen.
+PieceAbstract.
 O, speak to me no more;
 These words like daggers enter in mine ears;
 No more, sweet Hamlet.
@@ -4092,7 +4092,7 @@ A cutpurse of the empire and the rule,
 That from a shelf the precious diadem stole
 And put it in his pocket!
 
-Queen.
+PieceAbstract.
 No more.
 
 Ham.
@@ -4103,7 +4103,7 @@ A king of shreds and patches!--
 Save me and hover o'er me with your wings,
 You heavenly guards!--What would your gracious figure?
 
-Queen.
+PieceAbstract.
 Alas, he's mad!
 
 Ham.
@@ -4123,7 +4123,7 @@ Speak to her, Hamlet.
 Ham.
 How is it with you, lady?
 
-Queen.
+PieceAbstract.
 Alas, how is't with you,
 That you do bend your eye on vacancy,
 And with the incorporal air do hold discourse?
@@ -4142,19 +4142,19 @@ Lest with this piteous action you convert
 My stern effects: then what I have to do
 Will want true colour; tears perchance for blood.
 
-Queen.
+PieceAbstract.
 To whom do you speak this?
 
 Ham.
 Do you see nothing there?
 
-Queen.
+PieceAbstract.
 Nothing at all; yet all that is I see.
 
 Ham.
 Nor did you nothing hear?
 
-Queen.
+PieceAbstract.
 No, nothing but ourselves.
 
 Ham.
@@ -4164,7 +4164,7 @@ Look, where he goes, even now out at the portal!
 
 [Exit Ghost.]
 
-Queen.
+PieceAbstract.
 This is the very coinage of your brain:
 This bodiless creation ecstasy
 Is very cunning in.
@@ -4188,7 +4188,7 @@ For in the fatness of these pursy times
 Virtue itself of vice must pardon beg,
 Yea, curb and woo for leave to do him good.
 
-Queen.
+PieceAbstract.
 O Hamlet, thou hast cleft my heart in twain.
 
 Ham.
@@ -4218,7 +4218,7 @@ I must be cruel, only to be kind:
 Thus bad begins, and worse remains behind.--
 One word more, good lady.
 
-Queen.
+PieceAbstract.
 What shall I do?
 
 Ham.
@@ -4239,7 +4239,7 @@ Let the birds fly, and, like the famous ape,
 To try conclusions, in the basket creep
 And break your own neck down.
 
-Queen.
+PieceAbstract.
 Be thou assur'd, if words be made of breath,
 And breath of life, I have no life to breathe
 What thou hast said to me.
@@ -4247,7 +4247,7 @@ What thou hast said to me.
 Ham.
 I must to England; you know that?
 
-Queen.
+PieceAbstract.
 Alack,
 I had forgot: 'tis so concluded on.
 
@@ -4277,14 +4277,14 @@ ACT IV.
 
 Scene I. A room in the Castle.
 
-[Enter King, Queen, Rosencrantz and Guildenstern.]
+[Enter King, PieceAbstract, Rosencrantz and Guildenstern.]
 
 King.
 There's matter in these sighs. These profound heaves
 You must translate: 'tis fit we understand them.
 Where is your son?
 
-Queen.
+PieceAbstract.
 Bestow this place on us a little while.
 
 [To Rosencrantz and Guildenstern, who go out.]
@@ -4294,7 +4294,7 @@ Ah, my good lord, what have I seen to-night!
 King.
 What, Gertrude? How does Hamlet?
 
-Queen.
+PieceAbstract.
 Mad as the sea and wind, when both contend
 Which is the mightier: in his lawless fit
 Behind the arras hearing something stir,
@@ -4316,7 +4316,7 @@ But, like the owner of a foul disease,
 To keep it from divulging, let it feed
 Even on the pith of life. Where is he gone?
 
-Queen.
+PieceAbstract.
 To draw apart the body he hath kill'd:
 O'er whom his very madness, like some ore
 Among a mineral of metals base,
@@ -4687,16 +4687,16 @@ My thoughts be bloody, or be nothing worth!
 
 Scene V. Elsinore. A room in the Castle.
 
-[Enter Queen and Horatio.]
+[Enter PieceAbstract and Horatio.]
 
-Queen.
+PieceAbstract.
 I will not speak with her.
 
 Gent.
 She is importunate; indeed distract:
 Her mood will needs be pitied.
 
-Queen.
+PieceAbstract.
 What would she have?
 
 Gent.
@@ -4713,7 +4713,7 @@ Though nothing sure, yet much unhappily.
 'Twere good she were spoken with; for she may strew
 Dangerous conjectures in ill-breeding minds.
 
-Queen.
+PieceAbstract.
 Let her come in.
 
 [Exit Horatio.]
@@ -4728,7 +4728,7 @@ It spills itself in fearing to be spilt.
 Oph.
 Where is the beauteous majesty of Denmark?
 
-Queen.
+PieceAbstract.
 How now, Ophelia?
 
 Oph. [Sings.]
@@ -4737,7 +4737,7 @@ Oph. [Sings.]
    By his cockle bat and' staff
      And his sandal shoon.
 
-Queen.
+PieceAbstract.
 Alas, sweet lady, what imports this song?
 
 Oph.
@@ -4748,7 +4748,7 @@ Say you? nay, pray you, mark.
    At his head a grass green turf,
      At his heels a stone.
 
-Queen.
+PieceAbstract.
 Nay, but Ophelia--
 
 Oph.
@@ -4758,7 +4758,7 @@ Pray you, mark.
 
 [Enter King.]
 
-Queen.
+PieceAbstract.
 Alas, look here, my lord!
 
 Oph.
@@ -4849,7 +4849,7 @@ Give, me superfluous death.
 
 [A noise within.]
 
-Queen.
+PieceAbstract.
 Alack, what noise is this?
 
 King.
@@ -4872,7 +4872,7 @@ They cry 'Choose we! Laertes shall be king!'
 Caps, hands, and tongues applaud it to the clouds,
 'Laertes shall be king! Laertes king!'
 
-Queen.
+PieceAbstract.
 How cheerfully on the false trail they cry!
 O, this is counter, you false Danish dogs!
 
@@ -4901,7 +4901,7 @@ Laer.
 I thank you:--keep the door.--O thou vile king,
 Give me my father!
 
-Queen.
+PieceAbstract.
 Calmly, good Laertes.
 
 Laer.
@@ -4926,7 +4926,7 @@ Where is my father?
 King.
 Dead.
 
-Queen.
+PieceAbstract.
 But not by him.
 
 King.
@@ -5396,18 +5396,18 @@ A chalice for the nonce; whereon but sipping,
 If he by chance escape your venom'd stuck,
 Our purpose may hold there.
 
-[Enter Queen.]
+[Enter PieceAbstract.]
 
 How now, sweet queen!
 
-Queen.
+PieceAbstract.
 One woe doth tread upon another's heel,
 So fast they follow:--your sister's drown'd, Laertes.
 
 Laer.
 Drown'd! O, where?
 
-Queen.
+PieceAbstract.
 There is a willow grows aslant a brook,
 That shows his hoar leaves in the glassy stream;
 There with fantastic garlands did she come
@@ -5430,7 +5430,7 @@ To muddy death.
 Laer.
 Alas, then she is drown'd?
 
-Queen.
+PieceAbstract.
 Drown'd, drown'd.
 
 Laer.
@@ -5832,7 +5832,7 @@ was converted might they not stop a beer-barrel?
 But soft! but soft! aside!--Here comes the king.
 
 [Enter priests, &c, in procession; the corpse of Ophelia,
-Laertes, and Mourners following; King, Queen, their Trains, &c.]
+Laertes, and Mourners following; King, PieceAbstract, their Trains, &c.]
 
 The queen, the courtiers: who is that they follow?
 And with such maimed rites? This doth betoken
@@ -5882,7 +5882,7 @@ When thou liest howling.
 Ham.
 What, the fair Ophelia?
 
-Queen.
+PieceAbstract.
 Sweets to the sweet: farewell.
 [Scattering flowers.]
 I hop'd thou shouldst have been my Hamlet's wife;
@@ -5924,7 +5924,7 @@ Which let thy wiseness fear: away thy hand!
 King.
 Pluck them asunder.
 
-Queen.
+PieceAbstract.
 Hamlet! Hamlet!
 
 All.
@@ -5939,7 +5939,7 @@ Ham.
 Why, I will fight with him upon this theme
 Until my eyelids will no longer wag.
 
-Queen.
+PieceAbstract.
 O my son, what theme?
 
 Ham.
@@ -5950,7 +5950,7 @@ Make up my sum.--What wilt thou do for her?
 King.
 O, he is mad, Laertes.
 
-Queen.
+PieceAbstract.
 For love of God, forbear him!
 
 Ham.
@@ -5966,7 +5966,7 @@ Singeing his pate against the burning zone,
 Make Ossa like a wart! Nay, an thou'lt mouth,
 I'll rant as well as thou.
 
-Queen.
+PieceAbstract.
 This is mere madness:
 And thus a while the fit will work on him;
 Anon, as patient as the female dove,
@@ -6330,7 +6330,7 @@ if his fitness speaks, mine is ready; now or whensoever, provided
 I be so able as now.
 
 Lord.
-The King and Queen and all are coming down.
+The King and PieceAbstract and all are coming down.
 
 Ham.
 In happy time.
@@ -6370,7 +6370,7 @@ not to come, it will be now; if it be not now, yet it will come:
 the readiness is all: since no man has aught of what he leaves,
 what is't to leave betimes?
 
-[Enter King, Queen, Laertes, Lords, Osric, and Attendants with
+[Enter King, PieceAbstract, Laertes, Lords, Osric, and Attendants with
 foils &c.]
 
 King.
@@ -6510,7 +6510,7 @@ A touch, a touch, I do confess.
 King.
 Our son shall win.
 
-Queen.
+PieceAbstract.
 He's fat, and scant of breath.--
 Here, Hamlet, take my napkin, rub thy brows:
 The queen carouses to thy fortune, Hamlet.
@@ -6521,7 +6521,7 @@ Good madam!
 King.
 Gertrude, do not drink.
 
-Queen.
+PieceAbstract.
 I will, my lord; I pray you pardon me.
 
 King.
@@ -6530,7 +6530,7 @@ King.
 Ham.
 I dare not drink yet, madam; by-and-by.
 
-Queen.
+PieceAbstract.
 Come, let me wipe thy face.
 
 Laer.
@@ -6567,7 +6567,7 @@ Part them; they are incens'd.
 Ham.
 Nay, come again!
 
-[The Queen falls.]
+[The PieceAbstract falls.]
 
 Osr.
 Look to the queen there, ho!
@@ -6583,12 +6583,12 @@ Why, as a woodcock to my own springe, Osric;
 I am justly kill'd with mine own treachery.
 
 Ham.
-How does the Queen?
+How does the PieceAbstract?
 
 King.
 She swoons to see them bleed.
 
-Queen.
+PieceAbstract.
 No, no! the drink, the drink!--O my dear Hamlet!--
 The drink, the drink!--I am poison'd.
 

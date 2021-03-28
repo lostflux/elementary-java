@@ -46,6 +46,10 @@ public class Array<T> implements List<T> {
         return size == 0;
     }
 
+    public String toString() {
+        return Arrays.toString(this.toArray());
+    }
+
     /**
      * Check if it contains a given Object
      * @param o Object to check for
@@ -55,7 +59,7 @@ public class Array<T> implements List<T> {
     public boolean contains(Object o) {
         if (size == 0) return false;
         else for (int i=0; i<size; i++) {
-            System.out.println(size);
+            System.out.println("Checking: " + o + " at: " + i + " -> " + size);
             if (array[i].equals(o)) return true;
         }
         return false;
@@ -118,6 +122,7 @@ public class Array<T> implements List<T> {
             return true;
         }
         catch (Exception e) {
+            System.err.println(e.getMessage());
             return false;
         }
     }
@@ -159,8 +164,11 @@ public class Array<T> implements List<T> {
      * @return int index
      */
     public int getIndex(T item) {
-        for (int idx=0; idx < array.length; idx++) {
-            if (array[idx].equals(item)) return idx;
+        for (int idx=0; idx < size; idx++) {
+            System.out.println("Index: " + idx + " size: " + size);
+            if (array[idx].equals(item)) {
+                return idx;
+            }
         }
         return -1;
     }
@@ -189,8 +197,8 @@ public class Array<T> implements List<T> {
     @Override
     public boolean removeAll(@NotNull Collection<?> c) {
         try {
-            for (Object o : c) {
-                this.remove(o);
+            for (Object item : c) {
+                this.remove(item);
             }
             return true;
         }
@@ -244,8 +252,17 @@ public class Array<T> implements List<T> {
      * @return removed item
      */
     public T remove(int idx) {
-        T removed = array[idx];
-        if (size - idx >= 0) System.arraycopy(array, idx + 1, array, idx, size - idx);
+        T removed = null;
+        try {
+            if (size - idx >= 0) {
+                removed = array[idx];
+                System.arraycopy(array, idx + 1, array, idx, size - idx);
+                size--;
+            }
+        }
+        catch(Exception e) {
+            System.err.println(e.getMessage());
+        }
         return removed;
     }
 

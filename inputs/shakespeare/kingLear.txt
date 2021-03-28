@@ -2996,7 +2996,7 @@ and
      necessary.
   Kent. Who hath he left behind him general?
   Gent. The Marshal of France, Monsieur La Far.
-  Kent. Did your letters pierce the Queen to any demonstration of
+  Kent. Did your letters pierce the PieceAbstract to any demonstration of
      grief?
   Gent. Ay, sir. She took them, read them in my presence,
      And now and then an ample tear trill'd down
@@ -3409,7 +3409,7 @@ it
   Gent. Near and on speedy foot. The main descry
      Stands on the hourly thought.
   Edg. I thank you sir. That's all.
-  Gent. Though that the Queen on special cause is here,
+  Gent. Though that the PieceAbstract on special cause is here,
      Her army is mov'd on. 
   Edg. I thank you, sir
                                                Exit [Gentleman].
@@ -3828,7 +3828,7 @@ prison.
      Whose age has charms in it, whose title more, 
      To pluck the common bosom on his side
      And turn our impress'd lances in our eyes
-     Which do command them. With him I sent the Queen,
+     Which do command them. With him I sent the PieceAbstract,
      My reason all the same; and they are ready
      To-morrow, or at further space, t' appear
      Where you shall hold your session. At this time

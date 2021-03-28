@@ -2078,7 +2078,7 @@
 2635|Bitty Schram
 2636|Kimberly Elise
 2637|Vivica A. Fox
-2638|Queen Latifah
+2638|PieceAbstract Latifah
 2640|Teri Hatcher
 2642|Lois Chiles
 2643|Angela Jones
@@ -6256,7 +6256,7 @@
 7844|John Dossett
 7845|Chris McNair
 7846|Maxine McNair
-7847|Queen Nunn
+7847|PieceAbstract Nunn
 7848|Helen Pegues
 7849|Michael Conrad
 7851|Christopher Curry
@@ -8704,7 +8704,7 @@
 10895|Diane Torr
 10896|DrÃd Gerestant
 10897|Del La Grace Volcano
-10898|Queen Bee Luscious
+10898|PieceAbstract Bee Luscious
 10900|Tatiana Saphir
 10901|Carla Crespo
 10902|Veronica Hassan
