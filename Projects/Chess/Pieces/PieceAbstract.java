@@ -3,13 +3,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 
 public abstract class PieceAbstract implements Piece {
 
     Point position;                     // Track square with Piece
-    Suit color;                         // Black or White
+    String  suit;                         // Black or White
     private final String id;            // Identifier
     protected BufferedImage image;      // Visual representation of Piece
     protected double value;             // value of Piece
@@ -19,10 +18,10 @@ public abstract class PieceAbstract implements Piece {
     /**
      * BLACK or WHITE
      */
-    public enum Suit {
-        WHITE,
-        BLACK
-    }
+//    public enum Suit {
+//        WHITE,
+//        BLACK
+//    }
 
     /**
      * Constructor with name, suit, position
@@ -34,7 +33,7 @@ public abstract class PieceAbstract implements Piece {
     public PieceAbstract(char name, String suit, Point point, ChessGame chessgame) throws IOException {
 
         // Set Suit
-        color = suit.equals("white")? Suit.WHITE : Suit.BLACK;
+        this.suit = suit;
 
         // Set Point (row and rank)
         this.position = point;
@@ -78,12 +77,12 @@ public abstract class PieceAbstract implements Piece {
         }
     }
 
-    public Point getCoordinates() {
-        int x = (int) (position.getX() - 1) * ChessBoard.STEP + ChessBoard.STEP/5;
-        int y = (int) (Math.abs(position.getY() - 8)) * ChessBoard.STEP + ChessBoard.STEP/5;
-
-        return new Point(x, y);
-    }
+//    public Point getCoordinates() {
+//        int x = (int) (position.getX() - 1) * ChessBoard.STEP + ChessBoard.STEP/5;
+//        int y = (int) (Math.abs(position.getY() - 8)) * ChessBoard.STEP + ChessBoard.STEP/5;
+//
+//        return new Point(x, y);
+//    }
 
     public String toString() {
         return id;
@@ -109,5 +108,14 @@ public abstract class PieceAbstract implements Piece {
         int py = (int) currentPos.getY() + ChessBoard.STEP/5;
         g.drawImage(this.image, px, py, null, null);
 
+    }
+
+    public List<Integer> getPosMoves() {
+        assert posMoves != null;
+        return posMoves;
+    }
+
+    public String getSuit() {
+        return this.suit;
     }
 }
