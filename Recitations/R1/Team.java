@@ -1,22 +1,62 @@
 public class Team {
-    private final String team_name;
+    private String name;
     private int score;
 
-    public Team(String team_name){
-        this.team_name = team_name;
-        score = 0;
+    /**
+     * Creating a new Team
+     * @param name: The team's name.
+     */
+    public Team(String name) {
+
+        // set team name
+        this.name = name;
     }
 
-    public String getName(){
-        return team_name;
+    /**
+     * Get the team's name.
+     * @return  A string equivalent to the team's name.
+     */
+    public String getName() {
+        return this.name;
     }
 
-    public int getScore(){
-        return score;
+    /**
+     * Get the team's current score
+     * @return an int equal to the team's current score.
+     */
+    public int getScore() {
+        return this.score;
     }
 
-    public void addScore(){
+    /**
+     * Score method -- increments the team's score.
+     */
+    public void score () {
         score += 2;
     }
 
+    public static void main(String[] args) {
+
+        // (a) Create two teams.
+        Team argentina = new Team("Argentina");
+        Team france = new Team("Les Bleus");
+
+
+        // (b-c) score
+        argentina.score();
+
+        france.score();
+        france.score();
+
+        // Check which team wins.
+        if (france.getScore() == argentina.getScore()) {
+            System.out.println("The game ended in a draw.");
+        } else if (france.getScore() > argentina.getScore()) {
+            System.out.println("France wins!");
+        } else {
+            System.out.println("Argentina wins!");
+        }
+
+        System.out.println("THE END.");
+    }
 }

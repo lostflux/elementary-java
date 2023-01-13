@@ -135,7 +135,7 @@ public class ImageProcessor {
 
 	/**
 	 * Dims/brightens the current image by scaling each pixel value by the specified amount.
-	 * @param scale		how much to scale the pixel values
+	 * @param scaleR		how much to scale the pixel values
 	 */
 	public void scaleColor(double scaleR, double scaleG, double scaleB) {
 		// Nested loop over every pixel
