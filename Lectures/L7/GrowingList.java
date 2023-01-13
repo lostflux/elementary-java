@@ -1,4 +1,4 @@
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -125,7 +125,7 @@ public class GrowingList<T> implements SimpleList<T>, Comparable<T> {
     }
 
 //    @Override
-    public int compareTo(@NotNull T o) {
+    public int compareTo(T o) {
         return 0;
     }
 }

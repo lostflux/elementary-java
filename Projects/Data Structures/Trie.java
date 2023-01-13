@@ -1,4 +1,3 @@
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.ListIterator;
@@ -31,7 +30,7 @@ public class Trie {
 
         public Node put(char c) {
             Node n = null;
-            for (@NotNull ListIterator<Node> it = next.listIterator(); it.hasNext(); ) {
+            for (ListIterator<Node> it = next.listIterator(); it.hasNext(); ) {
                 Node node = it.next();
                 if (node.equals(c)) {
                     n = node;

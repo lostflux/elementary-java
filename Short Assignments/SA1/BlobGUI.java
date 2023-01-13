@@ -17,7 +17,7 @@ public class BlobGUI extends DrawingGUI {
 		super("Animated Blob", width, height); //set up graphics "world"
 	
 		// Create blob.
-		blob = new Blob(width/2, height/2);  // What happens if this isn't here? Try it so you see the symptom.
+		blob = new Rush(width/2, height/2);  // What happens if this isn't here? Try it so you see the symptom.
 		
 		// Timer drives the animation.
 		setTimerDelay(delay);

@@ -1,4 +1,3 @@
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -69,7 +68,6 @@ public class Array<T> implements List<T> {
      * Get iterator over items in list
      * @return Iterator over data items in Array
      */
-    @NotNull
     @Override
     public Iterator<T> iterator() {
 
@@ -92,15 +90,13 @@ public class Array<T> implements List<T> {
      * Cast Array instance to a primitive array
      * @return T[]
      */
-    @NotNull
     @Override
     public Object[] toArray() {
         return Arrays.copyOfRange(array, 0, size);
     }
 
-    @NotNull
     @Override
-    public <T1> T1[] toArray(@NotNull T1[] a) {
+    public <T1> T1[] toArray(T1[] a) {
         return null;
     }
 
@@ -149,7 +145,7 @@ public class Array<T> implements List<T> {
      * @return true if all items are in Array
      */
     @Override
-    public boolean containsAll(@NotNull Collection<?> c) {
+    public boolean containsAll(Collection<?> c) {
         for (Object item : c) {
             if (!this.contains(item)) {
                 return false;
@@ -174,7 +170,7 @@ public class Array<T> implements List<T> {
     }
 
     @Override
-    public boolean addAll(@NotNull Collection<? extends T> c) {
+    public boolean addAll(Collection<? extends T> c) {
         try {
             for (T item : c) {
                 this.add(item);
@@ -187,7 +183,7 @@ public class Array<T> implements List<T> {
     }
 
     @Override
-    public boolean addAll(int index, @NotNull Collection<? extends T> c) {
+    public boolean addAll(int index, Collection<? extends T> c) {
         for (T item : c) {
             add(item);
         }
@@ -195,7 +191,7 @@ public class Array<T> implements List<T> {
     }
 
     @Override
-    public boolean removeAll(@NotNull Collection<?> c) {
+    public boolean removeAll(Collection<?> c) {
         try {
             for (Object item : c) {
                 this.remove(item);
@@ -209,7 +205,7 @@ public class Array<T> implements List<T> {
     }
 
     @Override
-    public boolean retainAll(@NotNull Collection<?> c) {
+    public boolean retainAll(Collection<?> c) {
         return false;
     }
 
@@ -280,7 +276,6 @@ public class Array<T> implements List<T> {
         return lastIndex;
     }
 
-    @NotNull
     @Override
     public ListIterator<T> listIterator() {
         return new ListIterator<>() {
@@ -349,7 +344,6 @@ public class Array<T> implements List<T> {
         };
     }
 
-    @NotNull
     @Override
     public ListIterator<T> listIterator(int index) {
         return new ListIterator<>() {
@@ -419,7 +413,6 @@ public class Array<T> implements List<T> {
         };
     }
 
-    @NotNull
     @Override
     public List<T> subList(int fromIndex, int toIndex) {
         int size = toIndex - fromIndex;

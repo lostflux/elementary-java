@@ -220,38 +220,43 @@ public class FreqTree<E> implements Tree<E> {
         return null;
     }
 
+//    @Override
+//    public E replace(Position<E> position, E e) {
+//        return null;
+//    }
+
     @Override
-    public E replace(Position<E> position, E e) throws InvalidPositionException {
+    public Position<E> root() {
         return null;
     }
 
     @Override
-    public Position<E> root() throws EmptyTreeException {
+    public Position<E> parent(Position<E> position) {
         return null;
     }
 
     @Override
-    public Position<E> parent(Position<E> position) throws InvalidPositionException, BoundaryViolationException {
+    public Iterable<Position<E>> children(Position<E> position) {
         return null;
     }
 
     @Override
-    public Iterable<Position<E>> children(Position<E> position) throws InvalidPositionException {
-        return null;
+    public int numChildren(Position<E> p) throws IllegalArgumentException {
+        return 0;
     }
 
     @Override
-    public boolean isInternal(Position<E> position) throws InvalidPositionException {
+    public boolean isInternal(Position<E> position) {
         return false;
     }
 
     @Override
-    public boolean isExternal(Position<E> position) throws InvalidPositionException {
+    public boolean isExternal(Position<E> position) {
         return false;
     }
 
     @Override
-    public boolean isRoot(Position<E> position) throws InvalidPositionException {
+    public boolean isRoot(Position<E> position) {
         return !this.hasLeftParent() && !this.hasRightParent();
     }
 }
