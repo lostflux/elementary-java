@@ -27,4 +27,9 @@ hs_err_pid*
 
 # IntelliJ folders/files
 out*
-.idea*
+.idea
+
+.DS_Store
+.gradle/*
+grades/*
+out/*

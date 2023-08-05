@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.image.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -12,14 +13,15 @@ import javax.swing.*;
  * @author Chris Bailey-Kellogg, Dartmouth CS 10, Spring 2016, based on similar codes from previous terms
  */
 public class ThumbnailsHandout extends DrawingGUI {
-	private static final int trows = 3, tcols = 3; 	// setup: number of thumbnails per row and column
-	private static final int thumbWidth = 200, thumbHeight = 150; 			// setup: scaled size of thumbnails
-	private ArrayList<BufferedImage> thumbs;		// thumbnail images to display
+	private static int trows = 3;
+	private static int tcols = 3; 	// setup: number of thumbnails per row and column
+	private static int thumbWidth = 200, thumbHeight = 150; 			// setup: scaled size of thumbnails
+	private final List<BufferedImage> thumbs;		// thumbnail images to display
 
 	public ThumbnailsHandout(ArrayList<BufferedImage> images) {
 		initWindow(thumbWidth*tcols, thumbHeight*trows);
 
-		thumbs = new ArrayList<BufferedImage>();
+		thumbs = new ArrayList<>();
 
 		// Create the thumbnails
 		for (int i=0; i<trows*tcols; i++) {
@@ -59,13 +61,23 @@ public class ThumbnailsHandout extends DrawingGUI {
 	}
 
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				// Read the images, named dart0.jpg, dart1.jpg, ..., and store in list.
-				ArrayList<BufferedImage> images = ThumbnailsSolution.createImages(trows, tcols);
-				// Fire off the thumbnail viewer.
-				new ThumbnailsHandout(images);
-			}
+		SwingUtilities.invokeLater(() -> {
+			// Read the images, named dart0.jpg, dart1.jpg, ..., and store in list.
+			ArrayList<BufferedImage> images = createImages(trows, tcols);
+			// Fire off the thumbnail viewer.
+			new ThumbnailsHandout(images);
 		});
+	}
+
+	static ArrayList<BufferedImage> createImages(int trows, int tcols) {
+		ThumbnailsHandout.trows = trows;
+		ThumbnailsHandout.tcols = tcols;
+		ArrayList<BufferedImage> images = new ArrayList<>();
+		for (int i = 0; i< trows; i++) {
+			for (int j = 0; j< tcols; j++) {
+				images.add(loadImage("pictures/dart"+(i* tcols +j)+".jpg"));
+			}
+		}
+		return images;
 	}
 }

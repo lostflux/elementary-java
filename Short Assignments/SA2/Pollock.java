@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Painting random colors with wanderers
  * Template for SA-2, Dartmouth CS 10, Spring 2016
- * 
+ *
  * @author Chris Bailey-Kellogg, Dartmouth CS 10, Spring 2016
  * Modified by Amittai Wekesa to use WanderingPixels instead of Blobs, Winter 2021
  */
@@ -16,15 +16,15 @@ public class Pollock extends DrawingGUI {
 	private static final int numBlobs = 20000;			// setup: how many blobs
 	private static final int numToMove = 5000;			// setup: how many blobs to animate each frame
 
-	private BufferedImage result;						// the picture being painted
+	private final BufferedImage result;						// the picture being painted
 	private ArrayList<Blob> blobs;						// the blobs representing the picture
-	private ArrayList<WanderingPixel> wanderingPixels;
+	private final ArrayList<WanderingPixel> wanderingPixels;
 	
 	public Pollock() {
 		super("Pollock", width, height);
-		
+
 		result = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-		
+
 		// Create a bunch of random blobs.
 		// blobs = new ArrayList<Blob>();
 		wanderingPixels = new ArrayList<WanderingPixel>();
@@ -51,7 +51,7 @@ public class Pollock extends DrawingGUI {
 		g.drawImage(result,0, 0, null);
 		for (WanderingPixel wanderingPixel : wanderingPixels) {
 			wanderingPixel.draw(g);
-		}		
+		}
 	}
 
 	/**

@@ -165,7 +165,7 @@ public class Bacon {
      */
     private void buildMovieNetwork(String actorsSource, String moviesSource, String connectionsSource) {
         // Initialize Graph
-        movieNetwork = new AdjacencyMapGraph<String, HashSet<String>>();
+        movieNetwork = new AdjacencyMapGraph<>();
 
         // Parse the data from the sourceFile into convenient HashMaps
         HashMap<Integer, String> actorNames = loadActors(actorsSource);

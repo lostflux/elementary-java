@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class EditorPD extends JFrame {
 	// *** New vs. EditorOne
-	private static String serverIP = "localhost";			// IP address of sketch server
+	private static final String serverIP = "localhost";			// IP address of sketch server
 	// "localhost" for your own machine;
 	// or ask a friend for their IP address
 

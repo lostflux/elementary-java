@@ -26,7 +26,7 @@ public class CollisionGUI extends DrawingGUI {
 	public CollisionGUI() {
 		super("super collider", width, height);
 
-		blobs = new ArrayList<Blob>();
+		blobs = new ArrayList<>();
 
 		// Timer drives the animation.
 		startTimer();
@@ -177,10 +177,6 @@ public class CollisionGUI extends DrawingGUI {
 	}
 
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				new CollisionGUI();
-			}
-		});
+		SwingUtilities.invokeLater(CollisionGUI::new);
 	}
 }

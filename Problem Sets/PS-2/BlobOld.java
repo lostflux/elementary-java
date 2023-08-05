@@ -9,13 +9,13 @@ import java.awt.*;
  * @author CBK, Fall 2016, implements Point2D
  */
 
-public class Blob implements Point2D {
+public class BlobOld implements Point2D {
 	protected double x, y;				// position
 	protected double dx=0, dy=0;		// velocity, defaults to none
 	protected double r=5;				// radius
 	protected double dr=0;				// growth step (size and sign), defaults to none
 	
-	public Blob() {
+	public BlobOld() {
 		// Do nothing; everything has its default value
 		// This constructor is implicit unless you provide an alternative
 	}
@@ -24,7 +24,7 @@ public class Blob implements Point2D {
 	 * @param x		initial x coordinate
 	 * @param y		initial y coordinate
 	 */
-	public Blob(double x, double y) {
+	public BlobOld(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -34,7 +34,7 @@ public class Blob implements Point2D {
 	 * @param y		initial y coordinate
 	 * @param r		initial radius
 	 */
-	public Blob(double x, double y, double r) {
+	public BlobOld(double x, double y, double r) {
 		this.x = x;
 		this.y = y;
 		this.r = r;

@@ -62,11 +62,10 @@ public class Compressor {
     private HashMap<Character, Integer> logFrequencies() throws IOException {
         BufferedReader input = new BufferedReader(new FileReader(sourceFile));
         HashMap<Character, Integer> frequencyTable = new HashMap<>();
-        int cInt = input.read();
-        while (cInt != -1) {
+        int cInt;
+        while ((cInt = input.read()) != -1) {
             char c = (char) cInt;
             frequencyTable.put(c, frequencyTable.getOrDefault(c, 0) + 1);
-            cInt = input.read();
         }
         input.close();
         return frequencyTable;
@@ -468,7 +467,7 @@ public class Compressor {
 //                tree.left.left = new FreqTree<Character>('D', 4);
 //                tree.left.right = new FreqTree<Character>('E', 5);
 //                tree.right.left = new FreqTree<Character>('F', 6);
-//                tree.right.right = new FreqTree<Character>('G', 7);
+//                tree.right.right = new nd.vkcxz d FreqTree<Character>('G', 7);
 ////                tree.left.left.left = new FreqTree<Character>('H', 8);
 ////                tree.left.left.right = new FreqTree<Character>('I', 9);
 //                ArrayList<String> encoded = Encoder.encode(tree);

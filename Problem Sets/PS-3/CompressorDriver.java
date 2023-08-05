@@ -18,6 +18,7 @@ public class CompressorDriver {
         String testFile = "inputs/testfile.txt";
         String emptyFile = "inputs/empty.txt";
         String singleCharFile = "inputs/onechar.txt";
+        String simple = "inputs/simple.txt";
 //        String warpeace = "inputs/WarAndPeace.txt";
 
         // TODO: Compress
@@ -42,7 +43,8 @@ public class CompressorDriver {
             case 3 -> Compressor.engine(singleCharFile, "debug");   // test with single char file
             case 4 -> Compressor.engine(testFile, "debug");         // test with a proper (but shorter) file
             case 5 -> Compressor.engine(constitution, "debug");     // test with US constitution
-            case 6 -> {     // enter name of file to test
+            case 6 -> Compressor.engine(simple, "debug");
+            case 7 -> {     // enter name of file to test
                 System.out.println("Please type in the name & directory of the file you wish to test");
                 String name = input.next();
                 Compressor.engine(name, "debug");

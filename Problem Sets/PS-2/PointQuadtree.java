@@ -112,11 +112,18 @@ public class PointQuadtree<E extends Point2D> {
 	 * @param quadrant	1 through 4
 	 */
 	public PointQuadtree<E> getChild(int quadrant) {
-		if (quadrant==1) return c1;
-		if (quadrant==2) return c2;
-		if (quadrant==3) return c3;
-		if (quadrant==4) return c4;
-		return null;
+		return switch (quadrant) {
+			case 1 -> c1;
+			case 2 -> c2;
+			case 3 -> c3;
+			case 4 -> c4;
+			default -> null;
+		};
+//		if (quadrant==1) return c1;
+//		if (quadrant==2) return c2;
+//		if (quadrant==3) return c3;
+//		if (quadrant==4) return c4;
+//		return null;
 	}
 
 	/**
@@ -328,8 +335,8 @@ public class PointQuadtree<E extends Point2D> {
 
 	/**
 	 * Function to find parentCoordinates of a given point inside a another tree
-	 * @param point The point where child to find is
-	 * @param parentCoordinates List for coordinates of parentCoordinates to be added in
+	 * @param point The point where child to find is.
+	 * @param parentCoordinates List for coordinates of parentCoordinates to be added in.
 	 */
 	public void findParent(E point, int[] parentCoordinates) {
 

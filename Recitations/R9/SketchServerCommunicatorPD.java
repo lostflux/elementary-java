@@ -11,10 +11,9 @@ import java.net.Socket;
  * @author Chris Bailey-Kellogg, Dartmouth CS 10, Winter 2021, based on PS version
  */
 public class SketchServerCommunicatorPD extends Thread {
-	private Socket sock;					// to talk with client
-	private BufferedReader in;				// from client
+	private final Socket sock;					// to talk with client
 	private PrintWriter out;				// to client
-	private SketchServerPD server;			// handling communication for
+	private final SketchServerPD server;			// handling communication for
 
 	public SketchServerCommunicatorPD(Socket sock, SketchServerPD server) {
 		this.sock = sock;
@@ -23,7 +22,7 @@ public class SketchServerCommunicatorPD extends Thread {
 
 	/**
 	 * Sends a message to the client
-	 * @param msg
+	 * @param msg: The message to send.
 	 */
 	public void send(String msg) {
 		out.println(msg);
@@ -37,7 +36,8 @@ public class SketchServerCommunicatorPD extends Thread {
 			System.out.println("someone connected");
 			
 			// Communication channel
-			in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+			// from client
+			BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 			out = new PrintWriter(sock.getOutputStream(), true);
 
 			// Tell the client the current state of the world [here, maybe an ellipse]

@@ -1,3 +1,6 @@
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 import java.io.*;
 
@@ -34,18 +37,11 @@ public class BinaryTree<E> {
 	}
 	
 	public BinaryTree<E> copyToDepth(int d) {
-		if (d==0) {
-			return new BinaryTree<E>(data);
-		}
-		else {
-			if (hasLeft()) {
-				left = left.copyToDepth(d-1);
-			}
-			if (hasRight()) {
-				right = right.copyToDepth(d-1);
-			}
-		}
-		return this;
+		if (d == 0) return new BinaryTree<E>(data);
+
+		BinaryTree<E> l = hasLeft() ? getLeft().copyToDepth(d-1) : null;
+		BinaryTree<E> r = hasRight() ? getRight().copyToDepth(d-1) : null;
+		return new BinaryTree<E>(data, l, r);
 	}
 
 	/**
@@ -178,7 +174,8 @@ public class BinaryTree<E> {
 	/**
 	 * Does the real work of parsing, now given a tokenizer for the string
 	 */
-	public static BinaryTree<String> parseNewick(StringTokenizer st) {
+	@Contract("_ -> new")
+	public static @NotNull BinaryTree<String> parseNewick(StringTokenizer st) {
 		String token = st.nextToken();
 		if (token.equals("(")) {
 			// Inner node
@@ -188,12 +185,12 @@ public class BinaryTree<E> {
 			String close = st.nextToken();
 			String label = st.nextToken();
 			String[] pieces = label.split(":");
-			return new BinaryTree<String>(pieces[0], left, right);
+			return new BinaryTree<>(pieces[0], left, right);
 		}
 		else {
 			// Leaf
 			String[] pieces = token.split(":");
-			return new BinaryTree<String>(pieces[0]);
+			return new BinaryTree<>(pieces[0]);
 		}
 	}
 

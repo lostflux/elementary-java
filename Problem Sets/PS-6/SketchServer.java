@@ -1,6 +1,8 @@
 import java.net.*;
 import java.util.*;
 import java.io.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * A server to handle sketches: getting requests from the clients,
@@ -10,14 +12,14 @@ import java.io.*;
  */
 public class SketchServer {
 	private ServerSocket listen;						// for accepting connections
-	private ArrayList<SketchServerCommunicator> comms;	// all the connections with clients
+	private final ArrayList<SketchServerCommunicator> comms;	// all the connections with clients
 	private Sketch sketch;								// the state of the world
 	private int shapeId = 0;							// current shapeId
 	
 	public SketchServer(ServerSocket listen) {
 		this.listen = listen;
 		sketch = new Sketch();
-		comms = new ArrayList<SketchServerCommunicator>();
+		comms = new ArrayList<>();
 	}
 
 	public Sketch getSketch() {
@@ -36,6 +38,7 @@ public class SketchServer {
 	/**
 	 * The usual loop of accepting connections and firing off new threads to handle them
 	 */
+	@SuppressWarnings("InfiniteLoopStatement")
 	public void getConnections() throws IOException {
 		System.out.println("server ready for connections");
 
@@ -68,6 +71,27 @@ public class SketchServer {
 		for (SketchServerCommunicator comm : comms) {
 			comm.send(msg);
 		}
+
+//		List<SketchServerCommunicator> newComms = new ArrayList<>();
+
+		List<SketchServerCommunicator> newComms = comms.stream().toList();
+
+		IntStream stream = IntStream.range(0, 9);
+		stream.forEach(System.out::println);
+
+		List<Integer>	numbers	=	Arrays.asList(1, 2,	3,	4,	5,	6,	7,	8);
+		List<Integer>	twoEvenSquares	=
+				numbers.stream()
+				.filter(n	->	{
+					System.out.println("filtering	"	+	n);
+					return	n	%	2	==	0;
+				})
+				.map(n	->	{
+					System.out.println("mapping	"	+	n);
+					return	n	*	n;
+				})
+				.limit(2)
+				.collect(Collectors.toList());
 	}
 	
 	public static void main(String[] args) throws Exception {
